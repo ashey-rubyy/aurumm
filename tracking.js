@@ -6,7 +6,7 @@
 const SHIPMENTS = {
     'AUR-2026-010': {
         id: 'AUR-2026-010',
-        type: 'Gold Bullion (37kg)',
+        type: 'Diamond and Gold Bullion (127kg)',
         status: 'In Transit',
         statusCode: 'in-transit',
         progress: 35,
@@ -14,11 +14,11 @@ const SHIPMENTS = {
         destination: 'United States of America',
         currentLocation: 'UK Customs',
         estimatedDelivery: 'N/A:Item currently on hold',
-        weight: '37 kg',
+        weight: '127kg',
         value: 'Highly Classified',
         handler: 'Aurum Logistics',
         history: [
-            { time: 'Feb 25, 2026 — 08:14 GMT', event: `Departed Aurum's London's Secure Vault`, location: 'London, Germany' },
+            { time: 'Feb 25, 2026 — 08:14 GMT', event: `Departed Aurum's London's Secure Vault`, location: 'London, UK' },
             { time: 'Feb 25, 2026 — 14:30 GMT', event: 'Not Cleared by Customs', location: 'Londonn City Airport, United Kingdom' },
 
         ]

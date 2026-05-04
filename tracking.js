@@ -10,16 +10,16 @@ const SHIPMENTS = {
         status: 'In Transit',
         statusCode: 'in-transit',
         progress: 35,
-        origin: 'Germany',
+        origin: 'United Kingdom',
         destination: 'United States of America',
-        currentLocation: 'Germany Customs',
+        currentLocation: 'UK Customs',
         estimatedDelivery: 'N/A:Item currently on hold',
         weight: '37 kg',
         value: 'Highly Classified',
         handler: 'Aurum Logistics',
         history: [
-            { time: 'Feb 25, 2026 — 08:14 GMT', event: `Departed Aurum's Germany Secure Vault`, location: 'Berlin, Germany' },
-            { time: 'Feb 25, 2026 — 14:30 GMT', event: 'Not Cleared by Customs', location: 'Berlin Brandenburg Airport, Germany' },
+            { time: 'Feb 25, 2026 — 08:14 GMT', event: `Departed Aurum's London's Secure Vault`, location: 'London, Germany' },
+            { time: 'Feb 25, 2026 — 14:30 GMT', event: 'Not Cleared by Customs', location: 'Londonn City Airport, United Kingdom' },
 
         ]
     },

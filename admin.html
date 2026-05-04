@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal — Aurum Secure Logistics</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+
+    <div id="nav-placeholder"></div>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a><span class="breadcrumb-sep">▶</span><span>Admin Portal</span>
+                </div>
+                <span class="section-label">Simulation Admin</span>
+                <h1 class="section-title" style="font-size:clamp(1.8rem,4vw,3rem)">
+                    Shipment Management Portal
+                </h1>
+                <div class="divider"></div>
+                <p class="section-subtitle" style="font-size:0.82rem">
+                    <span style="color:var(--gold)">⚠ Demo Simulation Only</span> — All data is stored in localStorage. This page demonstrates UI/UX concepts for an admin dashboard.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background:var(--navy-mid);padding-top:60px">
+        <div class="container">
+
+            <!-- Stats -->
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--glass-border);border:1px solid var(--glass-border);margin-bottom:40px" class="fade-up">
+                <div style="background:var(--navy);padding:24px;text-align:center">
+                    <div style="font-family:var(--font-serif);font-size:2rem;color:var(--gold)" id="totalCount">—</div>
+                    <div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-top:4px">Total Shipments</div>
+                </div>
+                <div style="background:var(--navy);padding:24px;text-align:center">
+                    <div style="font-family:var(--font-serif);font-size:2rem;color:var(--gold)" id="inTransitCount">—</div>
+                    <div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-top:4px">In Transit</div>
+                </div>
+                <div style="background:var(--navy);padding:24px;text-align:center">
+                    <div style="font-family:var(--font-serif);font-size:2rem;color:#4caf7a" id="deliveredCount">—</div>
+                    <div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-top:4px">Delivered</div>
+                </div>
+                <div style="background:var(--navy);padding:24px;text-align:center">
+                    <div style="font-family:var(--font-serif);font-size:2rem;color:#e09050" id="processingCount">—</div>
+                    <div style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-top:4px">Processing / Customs</div>
+                </div>
+            </div>
+
+            <div class="admin-grid">
+
+                <!-- Add Form -->
+                <div class="admin-panel fade-up">
+                    <span class="section-label" style="margin-bottom:20px">Add New Shipment</span>
+                    <form id="addShipmentForm">
+                        <div class="form-group">
+                            <label class="form-label">Tracking ID</label>
+                            <input type="text" class="form-input" id="newId" placeholder="AUR-2024-XXX">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Commodity Type</label>
+                            <input type="text" class="form-input" id="newType" placeholder="Gold Bullion">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Origin</label>
+                            <input type="text" class="form-input" id="newOrigin" placeholder="City, Country">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Destination</label>
+                            <input type="text" class="form-input" id="newDest" placeholder="City, Country">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Status</label>
+                            <select class="form-select" id="newStatus">
+                <option value="processing">Processing</option>
+                <option value="in-transit">In Transit</option>
+                <option value="customs">Cleared Customs</option>
+                <option value="delivered">Delivered</option>
+              </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Add Shipment</button>
+                        <div id="addSuccess" style="display:none;margin-top:14px;background:rgba(0,200,100,0.06);border:1px solid rgba(0,200,100,0.2);padding:12px;text-align:center;font-size:0.8rem;color:#4caf7a">
+                            ✓ Shipment added successfully.
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Table -->
+                <div class="fade-up fade-up-delay-1">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+                        <span class="section-label" style="margin:0">All Shipments</span>
+                        <div style="display:flex;align-items:center;gap:12px">
+                            <label style="font-size:0.7rem;color:var(--text-muted);letter-spacing:0.15em;text-transform:uppercase">Filter:</label>
+                            <select class="form-select" id="filterSelect" style="padding:8px 14px;font-size:0.78rem;min-width:160px">
+                <option value="all">All Statuses</option>
+                <option value="processing">Processing</option>
+                <option value="in-transit">In Transit</option>
+                <option value="customs">Cleared Customs</option>
+                <option value="delivered">Delivered</option>
+              </select>
+                        </div>
+                    </div>
+                    <div style="overflow-x:auto;border:1px solid var(--glass-border)">
+                        <table class="shipment-table">
+                            <thead>
+                                <tr>
+                                    <th>Tracking ID</th>
+                                    <th>Type</th>
+                                    <th>Origin</th>
+                                    <th>Destination</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="shipmentsBody">
+                                <tr>
+                                    <td colspan="7" style="text-align:center;color:var(--text-muted);padding:40px">Loading...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="margin-top:12px;font-size:0.72rem;color:var(--text-muted)">
+                        ⚠ Removed entries will be deleted from localStorage. Refresh to restore defaults.
+                        <button onclick="localStorage.removeItem('aurum_shipments_admin');location.reload()" style="background:none;border:none;color:var(--gold);cursor:pointer;font-size:0.72rem;text-decoration:underline;padding:0;margin-left:8px">Reset to defaults</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="nav.js"></script>
+    <script src="main.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>

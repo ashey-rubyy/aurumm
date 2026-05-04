@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Aurum Secure Logistics</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+
+    <div id="nav-placeholder"></div>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a><span class="breadcrumb-sep">▶</span><span>Contact</span>
+                </div>
+                <span class="section-label">Get in Touch</span>
+                <h1 class="section-title" style="font-size:clamp(2.2rem,5vw,4rem)">
+                    Speak with a<br><em style="font-style:italic;color:var(--gold-light)">Specialist</em>
+                </h1>
+                <div class="divider"></div>
+                <p class="section-subtitle">
+                    Every inquiry is handled with complete confidentiality. Our specialists respond within 4 business hours.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background:var(--navy-mid)">
+        <div class="container">
+            <div class="contact-grid">
+
+                <!-- Left: Info -->
+                <div class="fade-up">
+                    <span class="section-label">Contact Information</span>
+                    <h2 class="section-title" style="font-size:1.8rem">Reach Us<br>Directly</h2>
+                    <div class="divider"></div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">☎</div>
+                        <div>
+                            <div class="contact-info-label">Global Hotline</div>
+                            <div class="contact-info-value">+1 (949) - 662 - 5126</div>
+                            <div style="font-size:0.75rem;color:var(--text-muted);margin-top:2px">24/7 for existing clients</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">@</div>
+                        <div>
+                            <div class="contact-info-label">General Enquiries</div>
+                            <div class="contact-info-value">aurumlogs0@gmail.com</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">⬡</div>
+                        <div>
+                            <div class="contact-info-label">Headquarters</div>
+                            <div class="contact-info-value">United Kingdom</div>
+                        </div>
+                    </div>
+
+                    <!-- Office Locations -->
+                    <div style="margin-top:40px">
+                        <span class="section-label" style="margin-bottom:20px">Regional Offices</span>
+                        <div class="offices-grid">
+                            <div class="office-card">
+                                <div class="office-city">New York</div>
+                                <div class="office-address">432 Park Avenue, 52nd Floor<br>New York, NY 10022<br>+1 914 662 - 5126</div>
+                            </div>
+                            <div class="office-card">
+                                <div class="office-city">London</div>
+                                <div class="office-address">One Canada Square, Level 32<br>London E14 5AB, UK<br>+44 74 4455 8019</div>
+                            </div>
+                            <div class="office-card">
+                                <div class="office-city">Geneva</div>
+                                <div class="office-address">Route de Frontenex 46<br>Geneva 1207, Switzerland<br>+41 22 900 4400</div>
+                            </div>
+                            <div class="office-card">
+                                <div class="office-city">Dubai</div>
+                                <div class="office-address">DIFC, Gate Village 8<br>Dubai, UAE<br>+971 4 560 1200</div>
+                            </div>
+
+                            <div class="office-card">
+                                <div class="office-city">Singapore</div>
+                                <div class="office-address">1 Marina Boulevard, #28-00<br>Singapore 018989<br>+65 6823 5000</div>
+                            </div>
+
+                            <div class="office-card">
+                                <div class="office-city">Hong Kong</div>
+                                <div class="office-address">Three Pacific Place, Level 28<br>Hong Kong SAR<br>+852 3600 7800</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="fade-up fade-up-delay-1">
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <span class="section-label">Send an Enquiry</span>
+                        <h3 style="font-family:var(--font-serif);font-size:1.6rem;font-weight:300;margin-bottom:28px">Secure Consultation<br>Request</h3>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="name">Full Name *</label>
+                                <input type="text" class="form-input" id="name" placeholder="John Smith">
+                                <div class="form-error" id="nameError"></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="company">Company *</label>
+                                <input type="text" class="form-input" id="company" placeholder="Organization">
+                                <div class="form-error" id="companyError"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email Address *</label>
+                                <input type="email" class="form-input" id="email" placeholder="you@company.com">
+                                <div class="form-error" id="emailError"></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="phone">Phone (Optional)</label>
+                                <input type="tel" class="form-input" id="phone" placeholder="+1 555 000 0000">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="subject">Subject *</label>
+                            <select class="form-select" id="subject">
+                <option value="">Select a subject...</option>
+                <option value="gold">Secure Gold Transport</option>
+                <option value="diamond">Diamond & Jewelry Logistics</option>
+                <option value="vault">Vault Storage Solutions</option>
+                <option value="armored">Armored Ground Transport</option>
+                <option value="airfreight">Air Freight</option>
+                <option value="customs">Customs & Compliance</option>
+                <option value="other">General Enquiry</option>
+              </select>
+                            <div class="form-error" id="subjectError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="message">Message *</label>
+                            <textarea class="form-textarea" id="message" placeholder="Please describe your requirements, estimated value, and preferred route or timeline..."></textarea>
+                            <div class="form-error" id="messageError"></div>
+                        </div>
+
+                        <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:28px">
+                            <input type="checkbox" id="consent" style="margin-top:3px;accent-color:var(--gold)">
+                            <label for="consent" style="font-size:0.75rem;color:var(--text-muted);line-height:1.6;cursor:pointer">
+                I understand that this enquiry is confidential and that Aurum Secure Logistics will not share my information with any third parties.
+              </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
+              Send Enquiry
+            </button>
+
+                        <div class="form-success" id="formSuccess" style="display:none;margin-top:20px">
+                            <div class="form-success-icon">✓</div>
+                            <div class="form-success-title">Enquiry Received</div>
+                            <div class="form-success-text">A specialist will contact you within 4 business hours. Your reference: AUR-ENQ-2026-<span id="refNum"></span></div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="nav.js"></script>
+    <script src="main.js"></script>
+    <script src="contact.js"></script>
+    <script>
+        // Generate random ref number on page load
+        document.getElementById('refNum').textContent = Math.floor(1000 + Math.random() * 9000);
+    </script>
+</body>
+
+</html>

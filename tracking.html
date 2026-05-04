@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Shipment — Aurum Secure Logistics</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+
+    <div id="nav-placeholder"></div>
+
+    <section class="tracking-section">
+        <div class="container">
+            <div class="fade-up" style="text-align:center;max-width:600px;margin:0 auto 48px">
+                <span class="section-label">Shipment Tracking</span>
+                <h1 class="section-title">Track Your Secure<br>Consignment</h1>
+                <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.7">
+                    Enter your Aurum tracking reference to receive a real-time status update. All tracking data is encrypted and access-restricted.
+                </p>
+            </div>
+
+            <!-- Input Box -->
+            <div class="tracking-input-wrap fade-up">
+                <label class="tracking-field-label" for="trackingInput">Enter Tracking ID</label>
+                <div class="tracking-field">
+                    <input type="text" class="tracking-input" id="trackingInput" autocomplete="off" spellcheck="false">
+                    <button class="tracking-btn" id="trackBtn">Track ▶</button>
+                </div>
+
+            </div>
+
+            <!-- Error Message -->
+            <div class="error-message fade-up" id="trackingError" style="display:none;max-width:620px;margin:12px auto 0">
+                <div style="display:flex;align-items:center;gap:12px;padding:16px 20px;background:rgba(200,50,50,0.06);border:1px solid rgba(200,50,50,0.2)">
+                    <span style="font-size:18px;color:#e05555">⚠</span>
+                    <div>
+                        <div style="font-size:0.85rem;color:#e08080">Tracking ID not found.</div>
+                        <div style="font-size:0.75rem;color:var(--text-muted);margin-top:2px">Please verify the ID and try again, or contact our support team.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spinner -->
+            <div class="spinner-wrap" id="spinnerWrap" style="display:none;flex-direction:column;align-items:center;gap:16px;padding:48px">
+                <div class="spinner"></div>
+                <div class="spinner-text">Retrieving Secure Data...</div>
+            </div>
+
+            <!-- Results -->
+            <div class="tracking-result" id="trackingResult" style="display:none;margin-top:24px"></div>
+
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="nav.js"></script>
+    <script src="main.js"></script>
+    <script src="tracking.js"></script>
+</body>
+
+</html>
